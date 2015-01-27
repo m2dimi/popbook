@@ -12,34 +12,38 @@
 <script src="js/scripts.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-					
+	<link rel="stylesheet" type="text/css" href="css/reset-min.css">    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
 	@import url(http://fonts.googleapis.com/css?family=Raleway:200,600,700,400);
 	@import url(http://fonts.googleapis.com/css?family=Englebert);
 	
 	
 		* { margin: 0; padding: 0; }
-		
+		html, body {height: 100%;}
 		body { 
-			background-image:url(images/bg3.jpg);
-			background-position: center center;
-			background-repeat: no-repeat; 
-			background-attachment: fixed; 
+			background:url(images/bg3.jpg) center center no-repeat fixed;	
 			background-size: cover; 
 			-moz-background-size: cover;     /* Gecko 1.9.2 (Firefox 3.6) */
 			-o-background-size: cover;        /* Opera 9.5 */
 			-webkit-background-size: cover;   /* Safari 3.0 */
 			background-size: 100% 100%;
+			
 		}
 		section {
 			text-align:center;
-			margin:6%;
+			
 			font-weight:bold;
+				font-family: 'Englebert', sans-serif;
+	color:white;
+			
 		}
 		
 		section h1 {
 			font-size:150px;
+			text-shadow: 6px 6px 0px rgba(0,0,0,0.5);
 		}
+
 		
 		
 		.modalDialog {
@@ -97,11 +101,6 @@ transition: opacity 400ms ease-in;
 h2 {
 	font-family: 'Raleway', Arial, sans-serif;
 }
-
-section {
-	font-family: 'Englebert', sans-serif;
-	color:white;
-}
 		
 		
 	</style>
@@ -123,8 +122,8 @@ section {
 		</div>
 <!-- /Menu -->
 
-    <section>
-    	
+    <section >
+    	<div id="wrapper"><p id="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p></div>
         <h1>POP'BOOK</h1>
         <br>
         <br>        
