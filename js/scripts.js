@@ -21,7 +21,15 @@ $(document).ready(function() {
   function draw() {
     console.log('Hello, drawing', csv.length, 'rows');
     // transform data objects and group them year by year
-
+	//console.log(csv)
+	var auteurs = {};
+	csv.filter(function(d){
+		if(!auteurs[d.auteur])
+			auteurs[d.auteur] = [] ;
+		auteurs[d.auteur].push(d)
+		//console.log(d,d.auteur)
+	})
+	console.log(auteurs)
     // simple disposal of our loaded objects
     svg.selectAll('circle')
       .data(csv, function(d){ return d.album_url})
