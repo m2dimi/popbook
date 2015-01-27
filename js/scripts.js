@@ -19,7 +19,7 @@ $(document).ready(function() {
     Get csv data as res (resource)
   */
   function draw() {
-    console.log('drawing', csv.length, 'rows');
+    console.log('Hello, drawing', csv.length, 'rows');
     // transform data objects and group them year by year
 
     // simple disposal of our loaded objects
