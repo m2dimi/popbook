@@ -1,6 +1,12 @@
+#titre{
+	margin-top:-7em;
+	}
+	
+#titre h1{
+	padding-top: 0.4em;
+	}	
 
-
-#wrapper {
+#etoile {
 	text-align: center;
 	color: #000;
 	font-weight: bold;
