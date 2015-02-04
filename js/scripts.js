@@ -12,8 +12,10 @@ $(document).ready(function() {
               .append('svg')
                 .attr({
                   width: 500,
-                  height: 300
+                  height: 300,
                 });
+
+
 
   /*
     Get csv data as res (resource)
@@ -33,15 +35,16 @@ $(document).ready(function() {
 	})
 	console.log(auteurs)
     // simple disposal of our loaded objects
-    svg.selectAll('circle')
-      .data(csv, function(d){ return d.album_url})
+	
+ /* svg.selectAll('circle')
+      .data(csv, function(d){return d.livre})
       .enter()
         .append('circle')
           .attr({
-            cx: function(d,i) {return i*50 + 24},
-            cy: 24,
-            r: 24
-          });
+            cx: function(d,i) {return i*50 + 50},
+            cy: 50,
+            r: 50
+          });*/
 		
 var livre = {};
 	csv.filter(function(d){
@@ -50,16 +53,6 @@ var livre = {};
 		livre[d.titre].push(d)
 		//console.log(d,d.titre)
 	})
-    // simple disposal of our loaded objects
-    svg.selectAll('circle')
-      .data(csv, function(d){ return d.album_url})
-      .enter()
-        .append('circle')
-          .attr({
-            cx: function(d,i) {return i*50 + 24},
-            cy: 24,
-            r: 24
-          });
 		    console.log(livre)
 			
 			
@@ -69,23 +62,22 @@ var films = {};
 			films[d.film] = [] ;
 		films[d.film].push(d)
 		//console.log(d,d.film)
-	})
-    // simple disposal of our loaded objects
-    svg.selectAll('circle')
-      .data(csv, function(d){ return d.album_url})
-      .enter()
-        .append('circle')
-          .attr({
-            cx: function(d,i) {return i*50 + 24},
-            cy: 24,
-            r: 24
-          });
-		    console.log(films)			
+	})  
+		    console.log(films)		
+			
+var selection = svg.selectAll("g.popcorn").data(auteurs)
+.enter()
+.append("g").attr({class:"popcorn"});
+
+selection.append("circle").attr({
+  r: function (d,i){}, 
+  cy :60,
+  cx : function(d, i){console.log("",d,i);return i*50 ;}
+})		
+		
   }
 
-  
-  
-  
+
   
   
   
