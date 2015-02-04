@@ -22,6 +22,8 @@ $(document).ready(function() {
     console.log('Hello, drawing', csv.length, 'rows');
     // transform data objects and group them year by year
 	//console.log(csv)
+	
+	
 	var auteurs = {};
 	csv.filter(function(d){
 		if(!auteurs[d.auteur])
@@ -40,9 +42,60 @@ $(document).ready(function() {
             cy: 24,
             r: 24
           });
-
+		
+var livre = {};
+	csv.filter(function(d){
+		if(!livre[d.titre])
+			livre[d.titre] = [] ;
+		livre[d.titre].push(d)
+		//console.log(d,d.titre)
+	})
+    // simple disposal of our loaded objects
+    svg.selectAll('circle')
+      .data(csv, function(d){ return d.album_url})
+      .enter()
+        .append('circle')
+          .attr({
+            cx: function(d,i) {return i*50 + 24},
+            cy: 24,
+            r: 24
+          });
+		    console.log(livre)
+			
+			
+var films = {};
+	csv.filter(function(d){
+		if(!films[d.film])
+			films[d.film] = [] ;
+		films[d.film].push(d)
+		//console.log(d,d.film)
+	})
+    // simple disposal of our loaded objects
+    svg.selectAll('circle')
+      .data(csv, function(d){ return d.album_url})
+      .enter()
+        .append('circle')
+          .attr({
+            cx: function(d,i) {return i*50 + 24},
+            cy: 24,
+            r: 24
+          });
+		    console.log(films)			
   }
 
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
 
 
 
@@ -59,3 +112,5 @@ $(document).ready(function() {
   });
 
 });
+
+
