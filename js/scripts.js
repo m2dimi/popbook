@@ -11,11 +11,9 @@ $(document).ready(function() {
       svg = d3.select('#playground')
               .append('svg')
                 .attr({
-                  width: 500,
-                  height: 300,
+                  width: 600,
+                  height: 600, fill : "green"
                 });
-
-
 
   /*
     Get csv data as res (resource)
@@ -25,19 +23,30 @@ $(document).ready(function() {
     // transform data objects and group them year by year
 	//console.log(csv)
 	
-	
-	var auteurs = {};
-	csv.filter(function(d){
-		if(!auteurs[d.auteur])
-			auteurs[d.auteur] = [] ;
-		auteurs[d.auteur].push(d)
-		//console.log(d,d.auteur)
-	})
-	console.log(auteurs)
+	 var auteurs_groups = {},
+      auteurs = [];
+
+  // cycle through the csv array and find groups belonging to the same author
+  csv.filter(function(d){
+    if(!auteurs_groups[d.auteur])
+        auteurs_groups[d.auteur] = [] ;
+    auteurs_groups[d.auteur].push(d)
+  })
+
+  // object to array transformation, to be used with d3
+  for(var i in auteurs_groups) {
+    auteurs.push({
+        id:i,
+        items:auteurs_groups[i]
+    })
+  }
+  console.log(auteurs)
+  
+  
     // simple disposal of our loaded objects
 	
- /* svg.selectAll('circle')
-      .data(csv, function(d){return d.livre})
+/*svg.selectAll('circle')
+      .data(auteurs, function(d){})
       .enter()
         .append('circle')
           .attr({
@@ -69,11 +78,26 @@ var selection = svg.selectAll("g.popcorn").data(auteurs)
 .enter()
 .append("g").attr({class:"popcorn"});
 
-selection.append("circle").attr({
+/*selection.append("circle").attr({
   r: function (d,i){}, 
   cy :60,
   cx : function(d, i){console.log("",d,i);return i*50 ;}
-})		
+})		*/
+
+selection.append("circle").attr({
+  r: function (d,i){
+    return d.items.length
+  }, 
+  cy :60,
+  cx : function(d, i){console.log("",d,i);return i*50 ;}
+})      
+
+selection.selectAll('circle.item').data(function(d) {
+  return d.items
+})
+  .enter()
+  .append("circle")
+    .attr({class:"item"});
 		
   }
 
