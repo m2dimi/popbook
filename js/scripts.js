@@ -7,14 +7,21 @@ $(document).ready(function() {
   /*
     vars and some d3 functions
   */
-  var csv = [], // this array will contain the csv data
-      svg = d3.select('#playground')
-              .append('svg')
-                .attr({
-                  width: 600,
-                  height: 600, fill : "green"
-                });
+var size = 960;
 
+var pack = d3.layout.pack()
+    .sort(null)
+    .size([size, size])
+    .value(function(d) { return d.radius * d.radius; })
+    .padding(5);
+
+  var csv = [], // this array will contain the csv data
+    svg = d3.select('#playground')
+    .append('svg')
+	.attr("width", size)
+    .attr("height", size)
+	.attr("transform", "translate(2,2)");
+ 
   /*
     Get csv data as res (resource)
   */
@@ -41,26 +48,13 @@ $(document).ready(function() {
     })
   }
   console.log(auteurs)
-  
-  
-    // simple disposal of our loaded objects
-	
-/*svg.selectAll('circle')
-      .data(auteurs, function(d){})
-      .enter()
-        .append('circle')
-          .attr({
-            cx: function(d,i) {return i*50 + 50},
-            cy: 50,
-            r: 50
-          });*/
 		
 var livre = {};
 	csv.filter(function(d){
 		if(!livre[d.titre])
 			livre[d.titre] = [] ;
 		livre[d.titre].push(d)
-		//console.log(d,d.titre)
+		
 	})
 		    console.log(livre)
 			
@@ -78,18 +72,13 @@ var selection = svg.selectAll("g.popcorn").data(auteurs)
 .enter()
 .append("g").attr({class:"popcorn"});
 
-/*selection.append("circle").attr({
-  r: function (d,i){}, 
-  cy :60,
-  cx : function(d, i){console.log("",d,i);return i*50 ;}
-})		*/
 
 selection.append("circle").attr({
   r: function (d,i){
     return d.items.length
   }, 
-  cy :60,
-  cx : function(d, i){console.log("",d,i);return i*50 ;}
+  cy :20,
+  cx : function(d, i){console.log("",d,i);return i*40 ;}
 })      
 
 selection.selectAll('circle.item').data(function(d) {
@@ -98,21 +87,47 @@ selection.selectAll('circle.item').data(function(d) {
   .enter()
   .append("circle")
     .attr({class:"item"});
-		
+	
+
+/*function update(){
+
+
+  // note the use of key function and that we RESELECT
+  var uselection = selection.selectAll("circle.item").data(function(d) {return ''+d;});
+  console.log('selection without data is', selection, 'while uselection is', uselection);
+  
+  uselection.exit()
+  	.transition()
+  	
+  	.duration(500)
+  	.attr({
+    	x: 50,
+    	//y : function(d, i){return i * 30 + 30}
+  	})
+  	.remove()
+  // only already existing stuffs
+  uselection
+  	.transition()
+  	
+  	.duration(500)//function(d, i){return 100 * i})
+  	.attr({
+    	y : function(d, i){return i * 30 + 30}
+  	})
+  
+  uselection.enter()
+  	.append("circle")
+  	.attr({
+    	x: 20,
+    	y : function(d, i){return i * 30 + 30}
+  	})
+  	.selectAll(function(d){return d})
+ 	
   }
-
-
+setInterval(update, 1500);
+*/
+  }
   
   
-  
-  
-
-  
-  
-  
-  
-  
-
 
 
   // load csv file using d3
