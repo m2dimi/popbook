@@ -3,20 +3,17 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pop'Book</title>
-    
 	<link rel="stylesheet" type="text/css" href="css/icons.css" />
-	<link rel="stylesheet" type="text/css" href="css/menu.css" />
-    <link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css">
-    
-	<script src="js/modernizr.custom.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/d3.min.js"></script>
 
-	
-    
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<script src="js/modernizr.custom.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
 	<style>
 		
 	@import url(http://fonts.googleapis.com/css?family=Raleway:200,600,700,400);
@@ -98,56 +95,47 @@
 
 .close:hover { background: red; }
 
+
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+
 h2 {
 	font-family: 'Raleway', Arial, sans-serif;
 }
-        
-        /*
-        -webkit-transition: opacity 400ms ease-in;
-        -moz-transition: opacity 400ms ease-in;
-        transition: opacity 400ms ease-in;
-        */	
-        
-		#playground {
-			width:700px;
-			height:500px;
-		}
-		
-    </style>
+	
+	</style>
     
 </head>
 
 	<body>
-		<!-- Menu -->
+<!-- Menu -->
 		<div class="container">
 
 			<nav id="bt-menu" class="bt-menu">
 				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 			<ul>
-					<li><a href="accueil.html" class="bt-icon icon-home">Home</a></li>
+					<li><a href="index.html" class="bt-icon icon-home">Home</a></li>
 					<li><a href="#Ouvretoi" class="bt-icon icon-zoom">FAQ</a></li>
 					<li><a href="#openModal" class="bt-icon icon-user-outline">? propos</a></li>
 				</ul>
 			</nav>
 		</div>
-        <!-- fin Menu -->
-        
-        <!-- DataViz -->
-		<div id="playground"></div>
+<!-- /Menu -->
+<div id="playground"></div>
 
-		<div id="openModal" class="modalDialog">
+		 <div id="openModal" class="modalDialog">
         	<div>
 				<a href="#close" title="Close" class="close">X</a>
                 <br>
                 <h2>A propos</h2>
                 <br>                
-				<p style="text-align:justify;">
-                	Etudiants et fans de cinéma nous nous sommes amusés à répertorier une multitude de livres adaptés en salle 
-                    dans le cadre d'un projet d'étude en matière de Design D'information.
-                    Nous vous invitons à découvrir notre site qui regroupe dans une dizaine de genres plus de 1000 adaptations!
-                    Bonne Séance ! 
-                 </p>
-            	<br>
+				<p style="text-align:justify;">Etudiants et fans de cinéma nous nous sommes amusés à répertorier une multitude de livres adaptés en salle dans le cadre d'un projet d'étude en matière de Design D'information.
+
+Nous vous invitons à découvrir notre site qui regroupe dans une dizaine de genres plus de 1000 adaptations!
+
+Bonne Séance ! </p>
+            <br>
 			</div>
 		</div>
         
@@ -157,19 +145,12 @@ h2 {
                 <br>
                 <h2>Comment ça marche ?</h2>
                 <br>                
-				 <div id="Ouvretoi" class="modalDialog">
-        	<div>
-				<a href="#close" title="Close" class="close">X</a>
-                <br>
-                <h2>Comment ça marche ?</h2>
-                <br>                
 				<p style="text-align:center;"><img src="images/ccm.gif"></p>
             <br>
 			</div>
 		</div>
-	<script src="js/bulles1.js"></script>
-    <!--<script src="js/scripts.js"></script>--> 
-	<script src="js/classie.js"></script>
-	<script src="js/borderMenu.js"></script>
+<script src="js/scripts.js"></script>		  
 	</body>
+<script src="js/classie.js"></script>
+	<script src="js/borderMenu.js"></script>
 </html>
