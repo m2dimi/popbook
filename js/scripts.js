@@ -53,30 +53,8 @@ var pack = d3.layout.pack()
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
         .text(function(d) { console.log(d); return d.realisateur.substring(0,5) });
-
-    return;
-    var selection = svg.selectAll("g.popcorn").data(something, function(d) {
-      return d.id
-    })
-    .enter()
-    .append("g").attr({class:"popcorn"});
-
-
-    selection.append("circle").attr({
-      r: function (d,i){
-        return d.items.length
-      }, 
-      cy :20,
-      cx : function(d, i){console.log("",d,i);return i*40 ;}
-    })      
-
-    selection.selectAll('circle.item').data(function(d) {
-      return d.items
-    })
-      .enter()
-      .append("circle")
-        .attr({class:"item"});
   };
+  
   
   // load csv file using d3
   d3.csv('contents/data.csv', function(res) {
