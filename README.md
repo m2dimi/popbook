@@ -18,23 +18,14 @@ Ainsi, cette visualisation nous permet de voir assez rapidement quels auteurs on
 Inspirations :
 http://vax.herokuapp.com/tour
 http://pmcruz.com/
-
-Data Visualisation : 
-http://selection.datavisualization.ch/ 
+http://bl.ocks.org/mbostock/4063269 
+http://www.cytoscape.org/
 
 Librairies : 
-http://medialab.github.io/artoo/
+d3
+Jquery
 
-Bubbles : 
-http://bl.ocks.org/mbostock/4063269 
 
-Networking : 
-http://marvl.infotech.monash.edu/webcola/ 
-http://www.cytoscape.org/
-http://bl.ocks.org/mbostock/929623
-http://bl.ocks.org/mbostock/1062288
-http://bl.ocks.org/mbostock/1021841
-http://bl.ocks.org/mbostock/1021953
 
 
 
