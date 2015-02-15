@@ -30,11 +30,7 @@ var pack = d3.layout.pack()
     
     //console.log(pack.nodes({children:something}))
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> FETCH_HEAD
     var node = svg.datum({
       name: 'root',
       children: something
@@ -42,7 +38,6 @@ var pack = d3.layout.pack()
       .data(pack.nodes)
     .enter().append("g")
       .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-<<<<<<< HEAD
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";})
 	  .on("click", function(d,i) {
 	  
@@ -58,16 +53,6 @@ var pack = d3.layout.pack()
             return d.film
           }
           return (d.name || d.film) +  (d.children ? '(' + d.children.length + ')': "")});
-=======
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";}); // automatic depuis pack layout
-
-    node.append("title")
-        .text(function(d) {
-          if(d.realisateur) {
-            return d.realisateur
-          }
-          return (d.name || d.realisateur) +  (d.children ? '(' + d.children.length + ')': "")});
->>>>>>> FETCH_HEAD
 
     node.append("circle")
         .attr("r", function(d) { return d.r; }); // automatic depuis pack layout
@@ -75,36 +60,7 @@ var pack = d3.layout.pack()
     node.filter(function(d) { return !d.children; }).append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
-<<<<<<< HEAD
         .text(function(d) { console.log(d); return d.film.substring(0, d.r / 3); });
-=======
-    var node = svg.datum({
-      name: 'root',
-      children: something
-    }).selectAll(".node")
-      .data(pack.nodes)
-    .enter().append("g")
-      .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";}); // automatic depuis pack layout
-
-    node.append("title")
-        .text(function(d) {
-          if(d.realisateur) {
-            return d.realisateur
-          }
-          return (d.name || d.realisateur) +  (d.children ? '(' + d.children.length + ')': "")});
-
-    node.append("circle")
-        .attr("r", function(d) { return d.r; }); // automatic depuis pack layout
-
-    node.filter(function(d) { return !d.children; }).append("text")
-        .attr("dy", ".3em")
-        .style("text-anchor", "middle")
-        .text(function(d) { console.log(d); return d.realisateur.substring(0,5) });
->>>>>>> FETCH_HEAD
-=======
-        .text(function(d) { console.log(d); return d.realisateur.substring(0,5) });
->>>>>>> FETCH_HEAD
   };
   
   
@@ -169,24 +125,12 @@ var pack = d3.layout.pack()
     console.log("combien d'auteurs :", auteurs.length);
     console.log('... de livres :', livres.length);
     console.log('... et de films :', films.length);
-<<<<<<< HEAD
-<<<<<<< HEAD
 	
 
     // call out 'update' function
 	
     draw(auteurs);
 	
-=======
-    
-    // call out 'update' function
-    draw(auteurs);
->>>>>>> FETCH_HEAD
-=======
-    
-    // call out 'update' function
-    draw(auteurs);
->>>>>>> FETCH_HEAD
   });
 
 });
