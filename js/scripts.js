@@ -39,6 +39,7 @@ var pack = d3.layout.pack()
     .enter().append("g")
       .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";})
+	  .on("mouseover",function(d,i) {var affiche_auteur = d.auteur; d3.select("#auteurnom").text(affiche_auteur);})
 	  .on("click", function(d,i) {
 	  
 	var meta = "Auteur : "+ d.auteur +"\nLivre : "+d.titre+"\nAnnee de publication : " +d.annee_publication +"\nFilm : " +d.film+"\nRealisateur : " +d.realisateur+"\nAnnee (film) : " +d.sortie;
