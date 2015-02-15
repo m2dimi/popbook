@@ -9,6 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="css/icons.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+        
 <script src="js/modernizr.custom.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -29,128 +34,150 @@
 			-o-background-size: cover;        /* Opera 9.5 */
 			-webkit-background-size: cover;   /* Safari 3.0 */
 			background-size: 100% 100%;
-			
-		}
-		section {
-			text-align:center;
-			
-			font-weight:bold;
-				font-family: 'Englebert', sans-serif;
-	color:white;
-			
-		}
-		
-		h1 {
-			font-size:150px;
-			padding-top:10px;
-			text-shadow: 6px 6px 0px rgba(0,0,0,0.5);
-		}
 
-		
-		
-		.modalDialog {
-	position: fixed;
-	font-family: 'Raleway', Arial, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.8);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
 }
 
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-
-.modalDialog > div {
-	width: 400px;
-	position: relative;
-	margin: 20% auto;
-	padding: 5px 20px 13px 20px;
-	background-color:#fff;
-}
-
-.close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-}
-
-.close:hover { background: red; }
-
-
--webkit-transition: opacity 400ms ease-in;
--moz-transition: opacity 400ms ease-in;
-transition: opacity 400ms ease-in;
-
-h2 {
-	font-family: 'Raleway', Arial, sans-serif;
-}
+button {
+		border:none;
+		background-color:transparent;
+		color:#fff;
+		cursor:pointer;
+		margin:3%;
+	}
 	
+	button:hover {
+		border:none;
+		background-color:transparent;
+		color:#bb0e1d;
+		cursor:pointer;
+	}
+	
+<<<<<<< HEAD
+	
+	
+=======
+circle{
+  fill: rgb(255, 240, 160);
+  fill-opacity: .50;
+  stroke: rgb(255, 255, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #fff0a0;
+  fill-opacity: 1;
+}
+.node {
+  cursor: pointer;
+}
+.node:hover {
+  stroke: #000;
+}
+#playground{
+width :60%;
+margin: auto; 
+}
+
+text {
+  font: 10px sans-serif;
+}
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+	
+circle{
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+text {
+  font: 10px sans-serif;
+}
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+	
+circle{
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+text {
+  font: 10px sans-serif;
+}
+>>>>>>> FETCH_HEAD
 	</style>
     
 </head>
 
 	<body>
 <!-- Menu -->
-		<div class="container">
+		<div class="">
 
 			<nav id="bt-menu" class="bt-menu">
 				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
-			<ul>
-					<li><a href="index.html" class="bt-icon icon-home">Home</a></li>
-					<li><a href="#Ouvretoi" class="bt-icon icon-zoom">FAQ</a></li>
-					<li><a href="#openModal" class="bt-icon icon-user-outline">? propos</a></li>
+			    <ul>
+					<li><a href="index.html" class="fa fa-home"></a></li>                    
+                    <li><button class="md-trigger" data-modal="modal-1"><span class="fa fa-question-circle fa-4x"></span></button></li> 
+                    <li><button class="md-trigger" data-modal="modal-2"><span class="fa fa-user fa-4x"></span></button></li>
+                                     
 				</ul>
 			</nav>
 		</div>
 <!-- /Menu -->
-<div id="playground"></div>
 
-		 <div id="openModal" class="modalDialog">
-        	<div>
-				<a href="#close" title="Close" class="close">X</a>
-                <br>
-                <h2>A propos</h2>
-                <br>                
-				<p style="text-align:justify;">Etudiants et fans de cinéma nous nous sommes amusés à répertorier une multitude de livres adaptés en salle dans le cadre d'un projet d'étude en matière de Design D'information.
+	<div id="playground"></div><div id="ticket"></div>
 
-Nous vous invitons à découvrir notre site qui regroupe dans une dizaine de genres plus de 1000 adaptations!
+		 <!-- All modals added here for the demo. You would of course just have one, dynamically created -->
+		<div class="md-modal md-effect-1" id="modal-2">
+			<div class="md-content">
+				<h3>A Propos</h3>
+				<div>
+					<p style="text-align:justify;">Etudiants et cinéfiles dans l'âme, nous nous sommes amusés à répertorier une multitude de livres adaptés en salle dans le cadre d'un projet d'étude en Design d'Information du Master 2 Design d'Interface Multimédia et Internet.
 
-Bonne Séance ! </p>
-            <br>
+<p>Nous vous invitons à découvrir notre site qui regroupe dans une dizaine de genre près de 1000 adaptations !</p>
+
+<p>Bonne séance ! </p>
+					<button class="md-close">Fermer</button>
+				</div>
 			</div>
 		</div>
         
-        <div id="Ouvretoi" class="modalDialog">
-        	<div>
-				<a href="#close" title="Close" class="close">X</a>
-                <br>
-                <h2>Comment ça marche ?</h2>
-                <br>                
-				<p style="text-align:center;"><img src="images/ccm.gif"></p>
-            <br>
+        
+        
+        <div class="md-modal md-effect-1" id="modal-1">
+			<div class="md-content">
+				<h3>Comment ça marche ?</h3>
+				<div>
+					<p style="text-align:center;"><img src="images/ccm.gif"></p>
+                    
+					<button class="md-close">Fermer</button>
+				</div>
 			</div>
 		</div>
+        
+        
+        
+        <div class="md-overlay"></div><!-- the overlay element -->
+        
+        
 <script src="js/scripts.js"></script>		  
 	</body>
-<script src="js/classie.js"></script>
+	<script src="js/classie.js"></script>
 	<script src="js/borderMenu.js"></script>
+    <script src="js/modalEffects.js"></script>
 </html>
