@@ -2,7 +2,7 @@
 =======
 
 <h2>Présentation</h2>
-Le projet PopBook est constitué de Sarah Hattab, Pauline Jay, Eléonore Lellouche et Idrissa Diehdiou. Nous avons choisi de travailler sur les livres adaptés au cinéma afin de quantifier l'importance des livres en tant que sources d'inspiration pour le cinéma, tout en prenant en compte les notes attribuées aux films par les spectateurs afin d'avoir une idée du succés (ou non) de ces adaptations.
+Le projet PopBook est constitué de Sarah Hattab, Pauline Jay, Eléonore Lellouche et Idrissa Diedhiou. Nous avons choisi de travailler sur les livres adaptés au cinéma afin de quantifier l'importance des livres en tant que sources d'inspiration pour le cinéma, tout en prenant en compte les notes attribuées aux films par les spectateurs afin d'avoir une idée du succés (ou non) de ces adaptations.
 
 <h2>Concept</h2>
 Pour mettre en perspective nos données, nous avons choisi une visualisation de données se rapprochant des réseaux où chaque cercle représenterait une donnée, à l'intérieur de laquelle est déjà ancrée d'autres données qui se libéreraient au clic.
