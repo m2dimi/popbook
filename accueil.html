@@ -73,16 +73,15 @@ button {
 		color:#bb0e1d;
 		cursor:pointer;
 	}
-root{  fill: rgb(255, 0, 0);}
+
 circle{
   fill: rgb(255, 240, 160);
-  fill-opacity: 0;
+  fill-opacity: 0.2;
 }
+
 circle:hover{
   fill: rgb(255, 240, 160);
-  fill-opacity: .50;
-  stroke: rgb(255, 255, 180);
-  stroke-width: 1px;
+  fill-opacity: .2;
 }
 
 .leaf circle {
@@ -97,7 +96,7 @@ circle:hover{
   cursor: pointer;
 }
 .node:hover {
-  stroke: #fff;
+
   
 }
 
@@ -110,17 +109,14 @@ text {
 }
 
 #ticket {
-
-width:60%;
-margin-right:auto;
-margin-left:auto;
-height:20%;
+width:150px;
+top:20em;
+margin-left : 1em;
+padding: 1%;
+position:absolute;
 color:#000;
 text-align:center;
 background-color:#fff;
-padding:2%;
-margin-top:1%;
-margin-bottom:3%;
 border-radius:3px;
 border-color:#FFF;
 font-family: 'Raleway', Arial, sans-serif;
@@ -129,7 +125,7 @@ font-family: 'Raleway', Arial, sans-serif;
 
 #auteurnom {
 font-family: 'Raleway', Arial, sans-serif;
-	position:absolute;
+position:absolute;
 width:150px;
 height:138px;
 top:9em;
@@ -185,7 +181,7 @@ margin: auto;
 
 		<div id="logo">
         	<a href="index.html"><img src="images/logo2.png"/></a>
-            <div id="ticket"></div>
+            
         </div>
         
         
@@ -202,7 +198,8 @@ margin: auto;
 		</div>
 <!-- /Menu -->
 
-		<div id="auteurnom"></div>
+		<p id="auteurnom"></p>
+		<p id="ticket">Cliquez sur une bulle </p>
         <div id="playground"></div>
 
 		 <!-- All modals added here for the demo. You would of course just have one, dynamically created -->
@@ -230,7 +227,7 @@ margin: auto;
 				<div>
 					<p style="text-align:center;"><img src="images/ccm.gif"></p>
                     
-                    <p style="text-align:justify;">Les petits cercles directement affichés correspondent aux films. Les plus grands cercles qui s'affichent au survol correspondent aux auteurs dont sont issus les films. Au survol des petits cercles, le noms des auteurs associés s'affichent sur le ticket. Au clic, les informations relatives aus films s'affichent. </p>
+                    <p style="text-align:justify;">Les petits cercles directement affichés correspondent aux films. Les plus grands cercles qui s'affichent au survol correspondent aux auteurs dont sont issus les films. Au survol des petits cercles, le nom des auteurs associés s'affichent sur le ticket. Au clic, les informations relatives aux films s'affichent. </p>
                     
 					<button class="md-close">Fermer</button>
 				</div>
