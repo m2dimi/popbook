@@ -76,6 +76,10 @@ button {
 	
 circle{
   fill: rgb(255, 240, 160);
+  fill-opacity: 0;
+}
+circle:hover{
+  fill: rgb(255, 240, 160);
   fill-opacity: .50;
   stroke: rgb(255, 255, 180);
   stroke-width: 1px;
@@ -83,32 +87,42 @@ circle{
 
 .leaf circle {
   fill: #fff0a0;
+  fill-opacity: 0.7;
+}
+.leaf circle:hover {
   fill-opacity: 1;
 }
+
 .node {
   cursor: pointer;
 }
 .node:hover {
-  stroke: #000;
+  stroke: #fff;
+  
 }
 
 text {
   font: 10px sans-serif;
 }
 
+#logo {
+	margin:1%;
+}
+
 #ticket {
 
-width:100%;
-height:100%;
+width:60%;
+margin-right:auto;
+margin-left:auto;
+height:20%;
 color:#000;
 text-align:center;
 background-color:#fff;
-padding:3%;
-margin:3%;
+padding:2%;
+margin-top:1%;
+margin-bottom:3%;
 border-radius:3px;
 border-color:#FFF;
-border-style:double;
-font-weight:bold;
 font-family: 'Raleway', Arial, sans-serif;
 
 }
@@ -118,8 +132,8 @@ font-family: 'Raleway', Arial, sans-serif;
 position : absolute;
 width:150px;
 height:138px;
-top:5em;
-left:5em;
+top:9em;
+left:3em;
 padding-top : 5em;
 text-align : center;
 background-image: url(images/ticket2.png);
@@ -128,17 +142,28 @@ background-image: url(images/ticket2.png);
 }
 
 #playground{
-width :60%;
+width :75%;
 margin: auto; 
 }
+
 
 	</style>
     
 </head>
 
 	<body>
+    
+
+
 <!-- Menu -->
 		<div class="">
+
+		<div id="logo">
+        	<a href="index.html"><img src="images/logo.png"/></a>
+            <div id="ticket"></div>
+        </div>
+        
+        
 
 			<nav id="bt-menu" class="bt-menu">
 				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
@@ -152,16 +177,19 @@ margin: auto;
 		</div>
 <!-- /Menu -->
 
-<div id="auteurnom"></div><div id="playground"><div id="ticket"></div></div>
+		<div id="auteurnom"></div>
+        <div id="playground"></div>
 
 		 <!-- All modals added here for the demo. You would of course just have one, dynamically created -->
 		<div class="md-modal md-effect-1" id="modal-2">
 			<div class="md-content">
 				<h3>A Propos</h3>
 				<div>
-					<p style="text-align:justify;">Etudiants et cinéfiles dans l'âme, nous nous sommes amusés à répertorier une multitude de livres adaptés en salle dans le cadre d'un projet d'étude en Design d'Information du Master 2 Design d'Interface Multimédia et Internet.
+				<p style="text-align:justify;">
 
-<p>Nous vous invitons à découvrir notre site qui regroupe dans une dizaine de genre près de 1000 adaptations !</p>
+<p>Nous sommes quatre étudiants du master 2 Design d'Interface, Multimédia et Internet. Pop'Book est un projet issu du cours Design d'Information. Il met en perspective les livres adaptés au cinéma afin de quantifier l'importance de la littérature en tant que source d'inspiration pour celui-ci.</p>
+
+<p>Nous vous invitons à découvrir ces données qui regroupent plus de 400 adaptations !</p>
 
 <p>Bonne séance ! </p>
 					<button class="md-close">Fermer</button>
@@ -177,6 +205,8 @@ margin: auto;
 				<div>
 					<p style="text-align:center;"><img src="images/ccm.gif"></p>
                     
+                    <p style="text-align:justify;">Les petits cercles directement affichés correspondent aux films. Les plus grands cercles qui s'affichent au survol correspondent aux auteurs dont sont issus les films. Au survol des petits cercles, le noms des auteurs associés s'affichent sur le ticket. Au clic, les informations relatives aus films s'affichent. </p>
+                    
 					<button class="md-close">Fermer</button>
 				</div>
 			</div>
@@ -185,6 +215,7 @@ margin: auto;
         
         
         <div class="md-overlay"></div><!-- the overlay element -->
+       
         
 <script src="js/scripts.js"></script>
 <script src="js/classie.js"></script>
