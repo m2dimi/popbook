@@ -42,7 +42,7 @@ var pack = d3.layout.pack()
 	  .on("mouseover",function(d,i) {var affiche_auteur = d.auteur; d3.select("#auteurnom").text(affiche_auteur);})
 	  .on("click", function(d,i) {
 	  
-	var meta = "Auteur : "+ d.auteur +"\nLivre : "+d.titre+"\nAnnee de publication : " +d.annee_publication +"\nFilm : " +d.film+"\nRealisateur : " +d.realisateur+"\nAnnee (film) : " +d.sortie;
+	var meta = d.film+" ; film de "+d.realisateur+", sorti en salles en "+d.sortie+". Il est issu du livre "+d.titre+" de "+d.auteur+", paru en "+d.annee_publication+". ";
 	console.log(meta);
 	d3.select("#ticket").text(meta);
 	//alert("Auteur : "+ d.auteur +"\nLivre : "+d.titre+"\nAnnee de publication : " +d.annee_publication +"\nFilm : " +d.film+"\nRealisateur : " +d.realisateur+"\nAnnee (film) : " +d.sortie); 

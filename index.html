@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pop'Book - Les livres adaptés au cinéma</title>
+    <title>Pop'Book</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -63,19 +63,47 @@ h2 {
 		cursor:pointer;
 	}
 		
-		
+			
+
+#footer {
+	background:transparent;
+	width:100%;
+	height:30px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+#credit {
+	color:white;
+	text-align:right;
+	font-weight:100;
+	padding:5px;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
+a {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
 	</style>
     
 </head>
 
 <body>
+
+
 <!-- Menu -->
 		<div class="">
 
 			<nav id="bt-menu" class="bt-menu">
 				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
 			    <ul>
-					<li><a href="accueil.html" class="fa fa-ticket"></a></li>                    
+					<li><button class="md-trigger" data-modal="modal-3"><span class="fa fa-ticket fa-3x"></span></button></li>                  
                     <li><button class="md-trigger" data-modal="modal-1"><span class="fa fa-question-circle fa-3x"></span></button></li> 
                     <li><button class="md-trigger" data-modal="modal-2"><span class="fa fa-user fa-3x"></span></button></li>
                                      
@@ -88,7 +116,7 @@ h2 {
     <!-- Header -->
     <header class="header">
         <div class="text-vertical-center">
-        	<div id="etoile"><p id="stars"><span>★</span><span>★</span><span><a href="accueil.html"><img src="images/logo.png"></a></span><span>★</span><span>★</span></p></div>
+        	<div id="etoile"><p id="stars"><span>★</span><span>★</span><span><button class="md-trigger" data-modal="modal-3"><img src="images/logo.png"></button></span><span>★</span><span>★</span></p></div>
             <h1>POP'BOOK</h1>
             <h3 style="color:white; font-variant:small-caps; font-weight:bold; font-size:larger;">Les livres adaptés au cinéma</h3>
         </div>
@@ -119,14 +147,35 @@ h2 {
 				<div>
 					<p style="text-align:center;"><img src="images/ccm.gif"></p>
                     
+                    <p style="text-align:justify;">Les petits cercles directement affichés correspondent aux films. Les plus grands cercles qui s'affichent au survol correspondent aux auteurs dont sont issus les films. Au survol des petits cercles, le noms des auteurs associés s'affichent sur le ticket. Au clic, les informations relatives aus films s'affichent. </p>
+                    
 					<button class="md-close">Fermer</button>
 				</div>
 			</div>
 		</div>
         
+        <div class="md-modal md-effect-1" id="modal-3">
+			<div class="md-content">
+				<h3>Comment ça marche ?</h3>
+				<div>
+					<p style="text-align:center;"><img src="images/ccm.gif"></p>
+                    
+                    <p style="text-align:justify;">Les petits cercles directement affichés correspondent aux films. Les plus grands cercles qui s'affichent au survol correspondent aux auteurs dont sont issus les films. Au survol des petits cercles, le noms des auteurs associés s'affichent sur le ticket. Au clic, les informations relatives aus films s'affichent. </p>
+                    
+					<a href="accueil.html"><button class="md-close">Fermer</button></a>
+				</div>
+			</div>
+		</div>
         
         
         <div class="md-overlay"></div><!-- the overlay element -->
+        
+        <div id="footer">
+        	<div id="credit">
+            	<p>M2 DIMI | 2014 - 2015</p>
+            </div>
+        </div>
+        
 
 
     <!-- jQuery -->
